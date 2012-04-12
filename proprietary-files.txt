@@ -1,0 +1,35 @@
+# Bins
+bin/ATFWD-daemon
+bin/cnd
+bin/drexe
+bin/immvibed
+bin/netmgrd
+bin/npsmobex
+bin/qcks
+bin/qmiproxy
+bin/qmuxd
+bin/rmt_storage
+bin/sec-ril
+bin/thermald
+
+# Audio
+lib/libacdbloader.so
+lib/libacdbmapper.so
+lib/libaudcal.so
+lib/libaudioalsa.so
+lib/libaudioparsers.so
+
+# Graphics
+lib/egl/eglsubAndroid.so
+lib/egl/libEGL_adreno200.so
+lib/egl/libGLESv1_CM_adreno200.so
+lib/egl/libGLESv2_adreno200.so
+lib/egl/libGLESv2S3D_adreno200.so
+lib/egl/libq3dtools_adreno200.so
+lib/libgsl.so
+lib/libC2D2.so
+lib/libOpenVG.so
+lib/libsc-a2xx.so
+
+# Misc
+lib/libdiag.so
