@@ -1,23 +1,13 @@
 # Bins
-bin/ATFWD-daemon
-bin/cnd
 bin/drexe
 bin/immvibed
-bin/netmgrd
 bin/npsmobex
-bin/qcks
-bin/qmiproxy
-bin/qmuxd
-bin/rmt_storage
-bin/sec-ril
 bin/thermald
 bin/bridgemgrd
 bin/ds_fmc_appd
-bin/ks
 bin/playsound
 bin/amploader
 bin/btnvtool
-bin/gpsone_daemon
 bin/hci_qcomm_init
 bin/hdmid
 bin/lpmkey
@@ -49,6 +39,35 @@ lib/libC2D2.so
 lib/libOpenVG.so
 lib/libsc-a2xx.so
 
+# Radio
+bin/netmgrd
+bin/ATFWD-daemon
+bin/ks
+bin/qcks
+bin/sec-ril
+bin/qmiproxy
+bin/qmuxd
+bin/rmt_storage
+lib/libsecril-client.so
+lib/libqmi.so
+lib/libqdi.so
+lib/libqmiservices.so
+lib/libqueue.so
+lib/libril-qc-qmi-1.so
+lib/libril-qcril-hook-oem.so
+lib/libdsutils.so
+lib/libdsi_netctrl.so
+lib/libidl.so
+lib/libnetmgr.so
+lib/libqdp.so
+
+# CND - Related to radio
+bin/cnd
+lib/libcneutils.so
+lib/libcneqmiutils.so
+lib/libxml.so
+lib/libnetutils.so
+
 # Vold
 bin/vold
 lib/libsec_devenc.so
@@ -58,17 +77,17 @@ lib/libsec_ecryptfs.so
 lib/libsecfips.so
 lib/libkeyutils.so
 
+# GPS
+bin/gpsone_daemon
+lib/liboncrpc.so
+lib/libgpsone_bit_api.so
+
 # Misc libs (will sort out later)
 lib/libdiag.so
 lib/libakm.so
-lib/libcneqmiutils.so
-lib/libcneutils.so
 lib/libcommondefs.so
-lib/libdsi_netctrl.so
-lib/libdsutils.so
 lib/libgemini.so
 lib/libgps.utils.so
-lib/libidl.so
 lib/libloc_adapter.so
 lib/libloc_api-rpc-qc.so
 lib/libloc_eng.so
@@ -77,20 +96,8 @@ lib/libmmosal.so
 lib/libmmparser_divxdrmlib.so
 lib/libmmparser.so
 lib/libmvsechocanceler.so
-lib/libnetmgr.so
-lib/libqdi.so
-lib/libqdp.so
-lib/libqmiservices.so
-lib/libqmi.so
-lib/libqueue.so
-lib/libril-qc-qmi-1.so
-lib/libril-qcril-hook-oem.so
 lib/lib_Samsung_Resampler.so
 lib/lib_Samsung_SB_AM_Handset_LPA.so
 lib/libsamsungSoundboosterLPA.so
-lib/libsecril-client.so
-lib/libxml.so
-lib/liboncrpc.so
-lib/libgpsone_bit_api.so
 lib/libQmageDecoder.so
 lib/libprofiler_msmadc.so
