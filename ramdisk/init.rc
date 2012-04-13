@@ -58,7 +58,7 @@ loglevel 3
     mkdir /system
     mkdir /data 0771 system system
     mkdir /persist 0771 system system
-    mkdir /cache 0771 system cache
+    mkdir /cache 0777 system cache
     mkdir /config 0500 root root
     mkdir /efs 0771 system system
     
@@ -172,7 +172,7 @@ on post-fs
 
     # We chown/chmod /cache again so because mount is run as root + defaults
     chown system cache /cache
-    chmod 0771 /cache
+    chmod 0777 /cache
 
     # This may have been created by the recovery system with odd permissions
     chown system cache /cache/recovery
@@ -261,9 +261,9 @@ on post-fs-data
     chown system system /data/dalvik-cache
     chmod 0771 /data/dalvik-cache
 
-    mkdir /cache/dalvik-cache 0771 system system
+    mkdir /cache/dalvik-cache 0777 system system
     chown system system /cache/dalvik-cache
-    chmod 0771 /cache/dalvik-cache
+    chmod 0777 /cache/dalvik-cache
 
     # create resource-cache and double-check the perms
     mkdir /data/resource-cache 0771 system system
