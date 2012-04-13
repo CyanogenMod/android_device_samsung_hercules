@@ -31,10 +31,6 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/samsung/hercules/BoardConfigVendor.mk
 
-# Audio
-# Stubbed audio, just to get by crashes
-BOARD_USES_GENERIC_AUDIO := true
-
 TARGET_BOOTLOADER_BOARD_NAME := hercules
 
 # Kernel
