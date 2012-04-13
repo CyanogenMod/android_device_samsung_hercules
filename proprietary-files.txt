@@ -82,6 +82,14 @@ bin/gpsone_daemon
 lib/liboncrpc.so
 lib/libgpsone_bit_api.so
 
+# Sensors (auto rotate fix)
+bin/sensorservice
+lib/libsensorservice
+lib/hw/sensor.default.so
+
+# Lights
+lib/hw/lights.msm8660.so
+
 # Misc libs (will sort out later)
 lib/libdiag.so
 lib/libakm.so
