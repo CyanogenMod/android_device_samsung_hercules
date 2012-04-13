@@ -84,7 +84,7 @@ lib/libgpsone_bit_api.so
 # Sensors (auto rotate fix)
 bin/sensorservice
 lib/libsensorservice.so
-lib/hw/sensor.default.so
+lib/hw/sensors.default.so
 
 # Lights
 lib/hw/lights.msm8660.so
