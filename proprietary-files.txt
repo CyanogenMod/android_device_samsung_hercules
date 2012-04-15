@@ -89,6 +89,9 @@ lib/hw/sensors.default.so
 # Lights
 lib/hw/lights.msm8660.so
 
+# Bluetooh
+bin/brcm_patchram_plus
+
 # Misc libs (will sort out later)
 lib/libdiag.so
 lib/libakm.so
