@@ -31,29 +31,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/hercules/ramdisk/init.target.rc:root/init.target.rc \
     device/samsung/hercules/ramdisk/initlogo.rle:root/initlogo.rle \
     device/samsung/hercules/ramdisk/lpm.rc:root/lpm.rc \
-    device/samsung/hercules/ramdisk/ueventd.rc:root/ueventd.rc
-
-## kernel modules
-PRODUCT_COPY_FILES += \
-    device/samsung/hercules/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
-    device/samsung/hercules/modules/cls_flow.ko:system/lib/modules/cls_flow.ko \
-    device/samsung/hercules/modules/dal_remotetest.ko:system/lib/modules/dal_remotetest.ko \
-    device/samsung/hercules/modules/dhd.ko:system/lib/modules/dhd.ko \
-    device/samsung/hercules/modules/dma_test.ko:system/lib/modules/dma_test.ko \
-    device/samsung/hercules/modules/evbug.ko:system/lib/modules/evbug.ko \
-    device/samsung/hercules/modules/gspca_main.ko:system/lib/modules/gspca_main.ko \
-    device/samsung/hercules/modules/ksapi.ko:system/lib/modules/ksapi.ko \
-    device/samsung/hercules/modules/lcd.ko:system/lib/modules/lcd.ko \
-    device/samsung/hercules/modules/msm-buspm-dev.ko:system/lib/modules/msm-buspm-dev.ko \
-    device/samsung/hercules/modules/msm_tsif.ko:system/lib/modules/msm_tsif.ko \
-    device/samsung/hercules/modules/qce.ko:system/lib/modules/qce.ko \
-    device/samsung/hercules/modules/qcedev.ko:system/lib/modules/qcedev.ko \
-    device/samsung/hercules/modules/qcrypto.ko:system/lib/modules/qcrypto.ko \
-    device/samsung/hercules/modules/sch_dsmark.ko:system/lib/modules/sch_dsmark.ko \
-    device/samsung/hercules/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
-    device/samsung/hercules/modules/spidev.ko:system/lib/modules/spidev.ko \
-    device/samsung/hercules/modules/tsif_chrdev.ko:system/lib/modules/tsif_chrdev.ko \
-    device/samsung/hercules/modules/vibrator.ko:system/lib/modules/vibrator.ko
+    device/samsung/hercules/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc
 
 # BCM4330 BT Firmware
 PRODUCT_COPY_FILES += \
@@ -125,7 +103,25 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
-    device/samsung/hercules/prebuilt/bcmdhd.ko:system/lib/modules/bcmdhd.ko
+    device/samsung/hercules/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
+    device/samsung/hercules/modules/cls_flow.ko:system/lib/modules/cls_flow.ko \
+    device/samsung/hercules/modules/dal_remotetest.ko:system/lib/modules/dal_remotetest.ko \
+    device/samsung/hercules/modules/dhd.ko:system/lib/modules/dhd.ko \
+    device/samsung/hercules/modules/dma_test.ko:system/lib/modules/dma_test.ko \
+    device/samsung/hercules/modules/evbug.ko:system/lib/modules/evbug.ko \
+    device/samsung/hercules/modules/gspca_main.ko:system/lib/modules/gspca_main.ko \
+    device/samsung/hercules/modules/ksapi.ko:system/lib/modules/ksapi.ko \
+    device/samsung/hercules/modules/lcd.ko:system/lib/modules/lcd.ko \
+    device/samsung/hercules/modules/msm-buspm-dev.ko:system/lib/modules/msm-buspm-dev.ko \
+    device/samsung/hercules/modules/msm_tsif.ko:system/lib/modules/msm_tsif.ko \
+    device/samsung/hercules/modules/qce.ko:system/lib/modules/qce.ko \
+    device/samsung/hercules/modules/qcedev.ko:system/lib/modules/qcedev.ko \
+    device/samsung/hercules/modules/qcrypto.ko:system/lib/modules/qcrypto.ko \
+    device/samsung/hercules/modules/sch_dsmark.ko:system/lib/modules/sch_dsmark.ko \
+    device/samsung/hercules/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
+    device/samsung/hercules/modules/spidev.ko:system/lib/modules/spidev.ko \
+    device/samsung/hercules/modules/tsif_chrdev.ko:system/lib/modules/tsif_chrdev.ko \
+    device/samsung/hercules/modules/vibrator.ko:system/lib/modules/vibrator.ko
 
 # common msm8660 configs
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)

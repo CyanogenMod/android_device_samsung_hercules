@@ -35,6 +35,7 @@ TARGET_BOOTLOADER_BOARD_NAME := hercules
 
 # Kernel
 TARGET_PREBUILT_KERNEL      := device/samsung/hercules/prebuilt/kernel
+TARGET_PROVIDES_INIT_RC     := true
 BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true
 BOARD_KERNEL_BASE           := 0x40400000
 BOARD_KERNEL_PAGESIZE       := 2048
