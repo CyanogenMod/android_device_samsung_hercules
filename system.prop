@@ -93,5 +93,6 @@ ro.bluetooth.request.master=true
 ro.qualcomm.cabl=1
 ro.sf.lcd_density=240
 
-ro.telephony.ril_class=QualcommNoSimReadyRIL
-ro.telephony.ril.v3=signalstrength
+# Still debugging RIL, but these currently should not be set
+#ro.telephony.ril_class=QualcommNoSimReadyRIL
+#ro.telephony.ril.v3=signalstrength
