@@ -43,11 +43,7 @@ on boot
 on emmc-fs
     mount ext3 /dev/block/mmcblk0p24 /system remount rw
     mkdir /system/etc/firmware/misc 0771 system system
-    wait /dev/block/mmcblk0p13
-    mount vfat /dev/block/mmcblk0p13 /system/etc/firmware/misc ro shortname=lower
     mkdir /system/etc/firmware/misc_mdm 0771 system system
-    wait /dev/block/mmcblk0p17
-    mount vfat /dev/block/mmcblk0p17 /system/etc/firmware/misc_mdm ro shortname=lower
     exec /system/bin/sh /system/etc/init.qcom.modem_links.sh
     mount ext4 /dev/block/mmcblk0p24 /system remount ro barrier=0
     mkdir /tombstones 0771 system system
@@ -85,10 +81,10 @@ service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     user root
     disabled
 
-service thermald /system/bin/thermald
-    class main
-    user root
-    group root
+#service thermald /system/bin/thermald
+#    class main
+#    user root
+#    group root
 
 service qrngd /system/bin/qrngd -f
     user root

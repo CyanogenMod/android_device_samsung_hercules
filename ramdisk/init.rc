@@ -58,7 +58,7 @@ loglevel 3
     mkdir /system
     mkdir /data 0771 system system
     mkdir /persist 0771 system system
-    mkdir /cache 0777 system cache
+    mkdir /cache 0771 system cache
     mkdir /config 0500 root root
     mkdir /efs 0771 system system
     
@@ -135,9 +135,9 @@ on emmc-fs
 # mount mmc partitions
     wait /dev/block/mmcblk0p24
     mount ext4 /dev/block/mmcblk0p24 /system ro barrier=1
-    exec check_filesystem /dev/block/mmcblk0p26 ext4
+    exec sfsck /dev/block/mmcblk0p26 ext4
     mount ext4 /dev/block/mmcblk0p26 /cache nosuid nodev barrier=1
-    exec check_filesystem /dev/block/mmcblk0p21 ext4
+    exec sfsck /dev/block/mmcblk0p21 ext4
     mount ext4 /dev/block/mmcblk0p21 /efs nosuid nodev barrier=1
     chown radio system /efs
     chmod 0771 /efs
@@ -160,7 +160,7 @@ on emmc-fs
     exec check_encryption_status /dev/block/mmcblk0p25
 
     wait /dev/block/mmcblk0p25
-    exec check_filesystem /dev/block/mmcblk0p25 ext4
+    exec sfsck /dev/block/mmcblk0p25 ext4
     mount ext4 /dev/block/mmcblk0p25 /data nosuid nodev barrier=1 noauto_da_alloc
 
 on post-fs
@@ -172,7 +172,7 @@ on post-fs
 
     # We chown/chmod /cache again so because mount is run as root + defaults
     chown system cache /cache
-    chmod 0777 /cache
+    chmod 0771 /cache
 
     # This may have been created by the recovery system with odd permissions
     chown system cache /cache/recovery
@@ -256,14 +256,9 @@ on post-fs-data
     mkdir /data/skaf/share 777 system system    
     mkdir /data/tstore 777 system system
 
-    # create dalvik-cache and double-check the perms, so as to enforce our permissions
-    mkdir /data/dalvik-cache 0771 system system
-    chown system system /data/dalvik-cache
-    chmod 0771 /data/dalvik-cache
-
-    mkdir /cache/dalvik-cache 0777 system system
+    mkdir /cache/dalvik-cache 0771 system system
     chown system system /cache/dalvik-cache
-    chmod 0777 /cache/dalvik-cache
+    chmod 0771 /cache/dalvik-cache
 
     # create resource-cache and double-check the perms
     mkdir /data/resource-cache 0771 system system
@@ -428,6 +423,7 @@ on boot
     chown radio system /sys/class/lcd/panel/lcd_type
     chown radio system /sys/class/lcd/panel/lcd_power
     chown system media_rw /sys/class/lcd/panel/power_reduce
+    chown radio system /sys/class/backlight/panel/auto_brightness
 # Permissions for mDNIe
     chown system media_rw /sys/class/mdnie/mdnie/scenario
     chown system media_rw /sys/class/mdnie/mdnie/mode
@@ -453,6 +449,35 @@ on boot
 	chown radio system /sys/devices/virtual/sec/switch/device_type
 	chown radio system /sys/devices/virtual/sec/switch/disable_vbus
 	chown radio system /sys/devices/virtual/sec/switch/usb_state
+# Permissions for Battery driver
+	chown radio system /sys/class/power_supply/battery/batt_esus_test
+	chown radio system /sys/class/power_supply/battery/batt_test_value
+	chown radio system /sys/class/power_supply/battery/batt_lpm_state
+	chown radio system /sys/class/power_supply/battery/fg_psoc
+	chown radio system /sys/class/power_supply/battery/system_rev
+	chown radio system /sys/class/power_supply/battery/batt_current_adc
+	chown radio system /sys/class/power_supply/battery/batt_test_value
+	chown radio system /sys/class/power_supply/battery/batt_temp_adc_spec
+	chown radio system /sys/class/power_supply/battery/batt_temp_check
+	chown radio system /sys/class/power_supply/battery/batt_full_check
+	chown radio system /sys/class/power_supply/battery/batt_type
+	chown radio system /sys/class/power_supply/battery/batt_lp_charging
+	chown radio system /sys/class/power_supply/battery/charging_source
+	chown radio system /sys/class/power_supply/battery/batt_temp_adc
+	chown radio system /sys/class/power_supply/battery/batt_temp
+	chown radio system /sys/class/power_supply/battery/batt_vfocv
+	chown radio system /sys/class/power_supply/battery/batt_soc
+	chown radio system /sys/class/power_supply/battery/batt_vol
+	chown radio system /sys/class/power_supply/battery/batt_esus_test
+	chown radio system /sys/class/power_supply/battery/camera
+	chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/mp3
+	chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/video
+	chown radio system /sys/class/power_supply/battery/talk_wcdma
+	chown radio system /sys/class/power_supply/battery/talk_gsm
+	chown radio system /sys/class/power_supply/battery/data_call
+	chown radio system /sys/class/power_supply/battery/batt_wifi
+	chown radio system /sys/class/power_supply/battery/gps
+	chown radio system /sys/class/power_supply/battery/device_state
 # Define TCP buffer sizes for various networks
 #   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
     setprop net.tcp.buffersize.default 4096,87380,110208,4096,16384,110208
@@ -637,7 +662,7 @@ service surfaceflinger /system/bin/surfaceflinger
 
 service zygote /system/bin/app_process -Xzygote /system/bin --zygote --start-system-server
     class main
-    socket zygote stream 666
+    socket zygote stream 660 root system
     onrestart write /sys/android_power/request_state wake
     onrestart write /sys/power/state on
     onrestart restart media
@@ -646,7 +671,7 @@ service zygote /system/bin/app_process -Xzygote /system/bin --zygote --start-sys
 service drm /system/bin/drmserver
     class main
     user drm
-    group system inet drmrpc sdcard_rw media_rw
+    group system inet drmrpc sdcard_rw media_rw radio
 
 service media /system/bin/mediaserver
     class main
@@ -751,12 +776,4 @@ service immvibed /system/bin/immvibed
     group shell
     oneshot  
 
-# Execute files in /etc/init.d before booting
-service userinit /system/xbin/busybox run-parts /system/etc/init.d
-    oneshot
-    class late_start
-    user root
-    group root
 
-on property:sys.boot_completed=1
-    stop bootanim
