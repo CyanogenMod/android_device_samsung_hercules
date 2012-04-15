@@ -18,10 +18,10 @@ else
   fi
 fi
 
-BASE=../../../vendor/samsung/skyrocket/proprietary
+BASE=../../../vendor/samsung/hercules/proprietary
 rm -rf $BASE/*
 
-for FILE in `egrep -v '(^#|^$)' proprietary-files.txt`; do
+for FILE in `egrep -v '(^#|^$)' ../msm8660-common/common-proprietary-files.txt`; do
   echo "Extracting /system/$FILE ..."
   DIR=`dirname $FILE`
   if [ ! -d $BASE/$DIR ]; then
@@ -33,5 +33,19 @@ for FILE in `egrep -v '(^#|^$)' proprietary-files.txt`; do
     cp $SRC/system/$FILE $BASE/$FILE
   fi
 done
+
+for FILE in `egrep -v '(^#|^$)' device-proprietary-files.txt`; do
+  echo "Extracting /system/$FILE ..."
+  DIR=`dirname $FILE`
+  if [ ! -d $BASE/$DIR ]; then
+    mkdir -p $BASE/$DIR
+  fi
+  if [ "$SRC" = "adb" ]; then
+    adb pull /system/$FILE $BASE/$FILE
+  else
+    cp $SRC/system/$FILE $BASE/$FILE
+  fi
+done
+
 
 ./setup-makefiles.sh
