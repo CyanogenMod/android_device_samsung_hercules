@@ -24,7 +24,8 @@ dev.pm.dyn_samplingrate=1
 #
 # system props for the cne module
 #
-persist.cne.UseCne=false
+persist.cne.UseCne=vendor
+persist.cne.UseSwim=false
 persist.cne.bat.range.low.med=30
 persist.cne.bat.range.med.high=60
 persist.cne.loc.policy.op=/system/etc/OperatorPolicy.xml
@@ -34,6 +35,7 @@ persist.cne.snsr.based.rat.mgt=false
 persist.cne.bat.based.rat.mgt=false
 persist.cne.rat.acq.time.out=30000
 persist.cne.rat.acq.retry.tout=0
+persist.cne.sync.swim.mode=false
 
 ro.hdmi.enable=true
 lpa.decode=true
@@ -91,8 +93,31 @@ ro.bluetooth.request.master=true
 
 # System property for cabl
 ro.qualcomm.cabl=1
+
+#
+# System prop for sending transmit power request to RIL during WiFi hotspot on/off
+#
+ro.ril.transmitpower=true
+
+#
+# Needed to match behavior of stock rom
+#      D/PHONE: mDoesRilSendMultipleCallRing=false
+#
+ro.telephony.call_ring.multiple=0
+
+# for 480x800 panel
 ro.sf.lcd_density=240
 
 # Still debugging RIL, but these currently should not be set
 #ro.telephony.ril_class=QualcommNoSimReadyRIL
 #ro.telephony.ril.v3=signalstrength
+
+# System property for SIM
+persist.radio.apm_sim_not_pwdn=1
+
+# System prop for qmi adb log
+persist.radio.adb_log_on=1
+
+# System proverty for sys info indication
+persist.radio.add_power_save=1
+
