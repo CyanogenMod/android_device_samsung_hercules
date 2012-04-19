@@ -109,8 +109,7 @@ ro.telephony.call_ring.multiple=0
 ro.sf.lcd_density=240
 
 # Still debugging RIL, but these currently should not be set
-#ro.telephony.ril_class=QualcommNoSimReadyRIL
-#ro.telephony.ril.v3=signalstrength
+ro.telephony.ril_class=HercSkyQualcommRIL
 
 # System property for SIM
 persist.radio.apm_sim_not_pwdn=1
