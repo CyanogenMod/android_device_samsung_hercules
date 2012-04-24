@@ -40,9 +40,13 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/hercules/overlay
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
-# GPS and Light
+# GPS
 PRODUCT_PACKAGES += \
-    gps.hercules \
+    gps.hercules
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.hercules
 
 # Kernel and modules
 ifeq ($(TARGET_PREBUILT_KERNEL),)
