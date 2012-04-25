@@ -21,6 +21,10 @@
 # lines, full and maguro, hence its name.
 #
  
+# APN config
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+
 # Camera
 PRODUCT_PACKAGES := \
     Camera
