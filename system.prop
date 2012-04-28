@@ -17,6 +17,7 @@ ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 debug.sf.hw=1
 debug.composition.type=c2d
+debug.overlayui.enable=0
 #ro.sf.compbypass.enable=1
 #debug.enabletr=true
 dev.pm.dyn_samplingrate=1
