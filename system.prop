@@ -50,6 +50,9 @@ media.stagefright.enable-fma2dp=false
 media.stagefright.enable-aac=true
 media.stagefright.enable-qcp=true
 
+ro.vendor.extension_library=/system/lib/libqc-opt.so
+
+
 #
 # system props for the data modules
 #
