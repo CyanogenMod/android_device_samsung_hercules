@@ -46,7 +46,9 @@ TARGET_RECOVERY_INITRC := device/samsung/hercules/recovery/init.rc
 
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := hercules
 
-COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
+# Only needed if TARGET_USES_OVERLAY is true and if using CM's
+# hardware/qcom/display (CAF's latest no longer has this #ifdef)
+#COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
 
 #TARGET_HARDWARE_3D := true
 
