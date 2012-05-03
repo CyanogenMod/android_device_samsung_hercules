@@ -90,6 +90,10 @@ PRODUCT_COPY_FILES += \
     device/samsung/hercules/ramdisk/lpm.rc:root/lpm.rc \
     device/samsung/hercules/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc
 
+# BT firmware
+PRODUCT_COPY_FILES += \
+    device/samsung/hercules/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
+
 # common msm8660
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
 
