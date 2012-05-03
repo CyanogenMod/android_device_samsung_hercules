@@ -16,11 +16,11 @@ persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 debug.sf.hw=1
-debug.composition.type=c2d
-debug.overlayui.enable=0
-dev.pm.dyn_samplingrate=1
-
+debug.composition.type=dyn
+ro.sf.compbypass.enable=1
 dalvik.vm.heapsize=64m
+dev.pm.dyn_samplingrate=1
+debug.enabletr=0
 
 #
 # system props for the cne module
@@ -38,6 +38,8 @@ persist.cne.rat.acq.time.out=30000
 persist.cne.rat.acq.retry.tout=0
 persist.cne.sync.swim.mode=false
 
+
+persist.sys.hdmi.on=0
 ro.hdmi.enable=true
 lpa.decode=true
 lpa.use-stagefright=true
@@ -49,9 +51,9 @@ media.stagefright.enable-http=true
 media.stagefright.enable-fma2dp=false
 media.stagefright.enable-aac=true
 media.stagefright.enable-qcp=true
+media.stagefright.enable-scan=true
 
 ro.vendor.extension_library=/system/lib/libqc-opt.so
-
 
 #
 # system props for the data modules
@@ -96,12 +98,18 @@ ro.bluetooth.request.master=true
 #debug.bt.discoverable_time=0
 
 # System property for cabl
-ro.qualcomm.cabl=1
+ro.qualcomm.cabl=0
 
 #
 # System prop for sending transmit power request to RIL during WiFi hotspot on/off
 #
 ro.ril.transmitpower=true
+
+# system prop for adb_notification
+persist.adb.notify=0
+
+# system prop for usb_notification
+persist.usb_mass_storage.notify=0
 
 #
 # Needed to match behavior of stock rom
