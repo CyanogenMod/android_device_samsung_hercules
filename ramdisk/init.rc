@@ -24,8 +24,8 @@ loglevel 3
     export ANDROID_ASSETS /system/app
     export ANDROID_DATA /data
     
-    export EXTERNAL_STORAGE /mnt/sdcard
-    export EXTERNAL_STORAGE2 /mnt/sdcard/external_sd
+    export EXTERNAL_STORAGE /mnt/emmc
+    export EXTERNAL_STORAGE2 /mnt/sdcard
     export USBHOST_STORAGE /mnt/sdcard/usbStorage
     
     export ASEC_MOUNTPOINT /mnt/asec
@@ -43,6 +43,7 @@ loglevel 3
 # create mountpoints
     mkdir /mnt 0775 root system
     mkdir /mnt/sdcard 0000 system system
+    mkdir /mnt/emmc 0000 system system
 
 # Create cgroup mount point for cpu accounting
     mkdir /acct
