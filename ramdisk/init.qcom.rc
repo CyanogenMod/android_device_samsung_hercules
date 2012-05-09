@@ -228,7 +228,7 @@ on property:ro.emmc=1
 #    oneshot
 
 #BCM
-service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
+service hciattach /system/bin/brcm_patchram_plus --enable_hci --no2bytes --enable_lpm \
    --use_baudrate_for_download --baudrate 3000000 --patchram /etc/firmware/bcm4330B1.hcd /dev/ttyHS0    
     class main
     user bluetooth
