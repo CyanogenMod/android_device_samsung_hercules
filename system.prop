@@ -119,8 +119,9 @@ ro.telephony.call_ring.multiple=0
 # for 480x800 panel
 ro.sf.lcd_density=240
 
-# Still debugging RIL, but these currently should not be set
-ro.telephony.ril_class=HercSkyQualcommRIL
+# Fields for custom RIL
+# MAX PROP NAME is 31 chars --|
+ro.telephony.ril_class=HercSkyQualcommUiccRIL
 
 # Property to allow IccCard to properly handle APPSTATE_SUBSCRIPTION_PERSO
 ro.telephony.ril.v3=qcomuiccstack
