@@ -17,9 +17,7 @@ ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 debug.sf.hw=1
 debug.composition.type=dyn
-ro.sf.compbypass.enable=0
 dev.pm.dyn_samplingrate=1
-debug.enabletr=0
 
 #
 # system props for the cne module
@@ -138,3 +136,7 @@ persist.radio.add_power_save=1
 # notify vold we have internal and external sd
 ro.additionalmounts=/mnt/emmc
 ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
+
+# qcom display options
+debug.enabletr=true
+com.qc.hardware=true
