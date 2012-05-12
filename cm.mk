@@ -1,7 +1,5 @@
 $(call inherit-product, device/samsung/hercules/full_hercules.mk)
 
-PRODUCT_RELEASE_NAME := SamsungSGH-T989
-
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
