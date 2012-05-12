@@ -140,3 +140,8 @@ ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 # qcom display options
 debug.enabletr=true
 com.qc.hardware=true
+
+# tweaks
+persist.sys.ui.hw=1
+dalvik.vm.verify_bytecode=false
+dalvik.vm.dexopt-flags=m=v,o=y
