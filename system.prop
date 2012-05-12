@@ -76,24 +76,6 @@ persist.audio.vr.enable=false
 # 131072 is decimal for 0x20000 to report version 2
 ro.opengles.version=131072
 
-#
-# system prop for Bluetooth Auto connect for remote initated connections
-#
-ro.bluetooth.remote.autoconnect=true
-
-#
-# system prop for Bluetooth FTP profile
-#
-ro.qualcomm.bluetooth.ftp=true
-#
-# system prop for requesting Master role in incoming Bluetooth connection.
-#
-ro.bluetooth.request.master=true
-# system property for Bluetooth discoverability time out in seconds
-# 0: Always discoverable
-# Disalbe because of discoverable timeout concept
-#debug.bt.discoverable_time=0
-
 # System property for cabl
 ro.qualcomm.cabl=0
 
