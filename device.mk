@@ -28,10 +28,7 @@ $(call inherit-product-if-exists, vendor/samsung/hercules/hercules-vendor.mk)
 
 ## misc
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.setupwizard.enable_bypass=1 \
-    dalvik.vm.lockprof.threshold=500 \
-    ro.com.google.locationfeatures=1 \
-    dalvik.vm.dexopt-flags=m=y
+    dalvik.vm.dexopt-flags=m=v,o=y
 
 ## overlays
 DEVICE_PACKAGE_OVERLAYS += device/samsung/hercules/overlay

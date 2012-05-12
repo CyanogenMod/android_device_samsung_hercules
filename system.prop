@@ -144,4 +144,3 @@ com.qc.hardware=true
 # tweaks
 persist.sys.ui.hw=1
 dalvik.vm.verify_bytecode=false
-dalvik.vm.dexopt-flags=m=v,o=y
