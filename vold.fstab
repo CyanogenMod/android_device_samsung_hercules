@@ -13,53 +13,10 @@
 ## storage_struct - ex) series, "/mnt/sdcard/extStorages" / parallel
 ######################
 # internal sdcard
-{
-	storage_struct = cover, "/mnt/sdcard/external_sd","/mnt/sdcard/usbStorage"
-	ums_sys_path = /sys/class/android_usb/f_mass_storage/lun/file
-	discard = enable
-}
-dev_mount sdcard /mnt/sdcard 28 /devices/platform/msm_sdcc.1/mmc_host/mmc0/mmc0 encryptable_nonremovable
+dev_mount emmc /mnt/emmc 28 /devices/platform/msm_sdcc.1/mmc_host/mmc0/mmc0
 
 # external sdcard
-{
-	ums_sys_path = /sys/class/android_usb/f_mass_storage/lun_ex/file
-	android_secure_containers = enable
-}
-dev_mount sdcard1 /mnt/sdcard/external_sd  auto /devices/platform/msm_sdcc.3/mmc_host/mmc2/mmc2
+dev_mount sdcard /mnt/sdcard auto /devices/platform/msm_sdcc.3/mmc_host/mmc2/mmc2
 
-#usb host device 
-{
-	media_type = usb
-}
-dev_mount sda /mnt/sdcard/usbStorage/UsbDriveA auto /devices/platform/msm_hsusb_host.0
-
-#usb host device 
-{
-	media_type = usb
-}
-dev_mount sdb /mnt/sdcard/usbStorage/UsbDriveB auto /devices/platform/msm_hsusb_host.0
-
-#usb host device 
-{
-	media_type = usb
-}
-dev_mount sdc /mnt/sdcard/usbStorage/UsbDriveC auto /devices/platform/msm_hsusb_host.0
-
-#usb host device 
-{
-	media_type = usb
-}
-dev_mount sdd /mnt/sdcard/usbStorage/UsbDriveD auto /devices/platform/msm_hsusb_host.0
-
-#usb host device 
-{
-	media_type = usb
-}
-dev_mount sde /mnt/sdcard/usbStorage/UsbDriveE auto /devices/platform/msm_hsusb_host.0
-
-#usb host device 
-{
-	media_type = usb
-}
-dev_mount sdf /mnt/sdcard/usbStorage/UsbDriveF auto /devices/platform/msm_hsusb_host.0
-#EOF
+#usb host device
+#dev_mount sda /mnt/sdcard/usbStorage/UsbDriveA auto /devices/platform/msm_hsusb_host.0
