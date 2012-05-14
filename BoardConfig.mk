@@ -40,12 +40,6 @@ BOARD_KERNEL_BASE           := 0x40400000
 BOARD_KERNEL_PAGESIZE       := 2048
 BOARD_FORCE_RAMDISK_ADDRESS := 0x41800000
 
-# Only needed if TARGET_USES_OVERLAY is true and if using CM's
-# hardware/qcom/display (CAF's latest no longer has this #ifdef)
-#COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
-
-#TARGET_HARDWARE_3D := true
-
 # cat /proc/emmc
 #dev:        size     erasesize name
 #mmcblk0p22: 00fffc00 00000200 "recovery"
