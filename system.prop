@@ -84,7 +84,8 @@ ro.sf.lcd_density=240
 
 # Fields for custom RIL
 # MAX PROP NAME is 31 chars --|
-ro.telephony.ril_class=HercSkyQualcommUiccRIL
+ro.telephony.ril_class=SamsungQualcommUiccRIL
+telephony.lteOnGsmDevice=1
 
 # Property to allow IccCard to properly handle APPSTATE_SUBSCRIPTION_PERSO
 ro.telephony.ril.v3=qcomuiccstack
