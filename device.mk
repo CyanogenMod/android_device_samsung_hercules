@@ -85,7 +85,7 @@ PRODUCT_COPY_FILES += \
 
 # Vold fstab
 PRODUCT_COPY_FILES += \
-    device/samsung/hercules/configs/vold.fstab:system/etc/vold.fstab
+    device/samsung/hercules/vold.fstab:system/etc/vold.fstab
 
 # common msm8660
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
