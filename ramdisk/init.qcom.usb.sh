@@ -98,13 +98,13 @@ case "$usb_config" in
             * )
                 case "$baseband" in
                     "svlte2a")
-                         setprop persist.sys.usb.config acm,mass_storage,adb
+                         setprop persist.sys.usb.config mtp,adb
                     ;;
                     "csfb")
-                         setprop persist.sys.usb.config acm,mass_storage,adb
+                         setprop persist.sys.usb.config mtp,adb
                     ;;
                     *)
-                         setprop persist.sys.usb.config acm,mass_storage,adb
+                         setprop persist.sys.usb.config mtp,adb
                     ;;
                 esac
             ;;

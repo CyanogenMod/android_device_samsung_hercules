@@ -77,7 +77,6 @@ start_sensors()
 # Allow persistent faking of bms
 # User needs to set fake bms charge in persist.bms.fake_batt_capacity
 #
-target=`getprop ro.board.platform`
 fake_batt_capacity=`getprop persist.bms.fake_batt_capacity`
 case "$fake_batt_capacity" in
     "") ;; #Do nothing here
@@ -129,7 +128,6 @@ done
 #
 # Start gpsone_daemon for SVLTE Type I & II devices
 #
-target=`getprop ro.board.platform`
 case "$target" in
         "msm7630_fusion")
         start gpsone_daemon

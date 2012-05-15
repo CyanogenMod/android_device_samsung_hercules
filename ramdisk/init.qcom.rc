@@ -56,6 +56,9 @@ on boot
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
     chown bluetooth bluetooth ro.bt.bdaddr_path
 
+    mkdir /dev/socket/qmux_radio 0770 radio radio
+    chmod 2770 /dev/socket/qmux_radio
+
     setprop wifi.interface wlan0
 
     # Enable Bluetooth 802.11 PAL when Bluetooth is turned on
@@ -120,11 +123,11 @@ on post-fs-data
 #    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 
     # Create the directories used by the Wireless subsystem
-    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi 0770 wifi system
     chmod 0770 /data/misc/wifi
     chmod 0660 /data/misc/wifi/wpa_supplicant.conf
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
-    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    mkdir /data/misc/dhcp 0775 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
 
     # for skt iwlan
@@ -200,7 +203,10 @@ on property:init.svc.wpa_supplicant=stopped
 
 service cnd /system/bin/cnd
     class late_start
-    socket cnd stream 666 root radio
+    socket cnd stream 660 root radio
+	user radio
+	group system radio
+	disabled
 
 service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p10 /dev/block/mmcblk0p11 /dev/block/mmcblk0p17
     class late_start
@@ -228,7 +234,7 @@ on property:ro.emmc=1
 #    oneshot
 
 #BCM
-service hciattach /system/bin/brcm_patchram_plus --enable_hci --no2bytes --enable_lpm \
+service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
    --use_baudrate_for_download --baudrate 3000000 --patchram /etc/firmware/bcm4330B1.hcd /dev/ttyHS0    
     class main
     user bluetooth
@@ -375,9 +381,10 @@ service iprenew_p2p /system/bin/dhcpcd -n
     disabled
     oneshot
 
-#service dhcpcd_bnep0 /system/bin/dhcpcd -BKLG
-#    disabled
-#    oneshot
+service dhcpcd_bnep0 /system/bin/dhcpcd -ABKL
+	class main
+    disabled
+    oneshot
 
 # I-WLAN
 service iwland /system/bin/iwland
@@ -456,16 +463,24 @@ on property:init.svc.samsungani=stopped
 on property:sys.boot_completed=1
     start qcom-post-boot
 
-#service atfwd /system/bin/ATFWD-daemon
-#    class late_start
-#    user system
-#    group system radio
-#    onrestart /system/bin/log -t RIL-ATFWD -p w "ATFWD daemon restarted"
-
 service hdmid /system/bin/hdmid
     class late_start
-    socket hdmid stream 0660 root system graphics
+	user system
+    group system graphics
+	socket hdmid stream 0660 system system
     disabled
+
+on property:ro.hdmi.enable=true
+    start hdmid
+
+#HDMID Permission for sys nodes
+chown system graphics /sys/class/graphics/fb1/connected
+chown system graphics /sys/class/graphics/fb1/edid_modes
+chown system graphics /sys/class/graphics/fb1/power_state
+chown system graphics /sys/class/graphics/fb1/hpd
+chown system graphics /sys/class/graphics/fb1/hdcp_present
+chown system graphics /sys/class/graphics/fb1/hdmi_mode
+chmod 0660 /sys/class/graphics/fb1/power_state
 
 #service abld /system/bin/mm-abl-daemon
 #    class late_start

@@ -33,6 +33,18 @@ on boot
     chmod 664	/dev/akm8975
     chown system system /sys/class/K3G_GYRO-dev/k3g/gyro_selftest_dps
     chown system system /sys/class/sec/gsensorcal/calibration
+    chown system system /sys/class/proximity/proximity/proximity_avg
+    chown system system /sys/devices/virtual/K3G_GYRO-dev/k3g/gyro_selftest
+    chown system system /sys/devices/virtual/K3G_GYRO-dev/k3g/gyro_get_temp
+    chown system system /sys/devices/virtual/K3G_GYRO-dev/k3g/gyro_power_on
+    chown system system /sys/devices/virtual/K3G_GYRO-dev/k3g/gyro_selftest_dps
+    chown system system /sys/devices/virtual/accelerometer/accelerometer/acc_file
+    chown system system /sys/devices/virtual/sec/gsensorcal/calibration
+    chown system system /sys/class/sensors/barometer_sensor/sea_level_pressure
+    chown system system /sys/class/sensors/barometer_sensor/eeprom_check
+
+    #camera
+    chown system camera /sys/class/ledflash/sec_ledflash/torch
 
 # ko files for vibrator (block this cmd temporary. vibrato driver cause reset during boot)
     insmod /system/lib/modules/vibrator.ko
@@ -101,4 +113,4 @@ on property:sys.radio.shutdown=true
 service TvoutService_C /system/bin/bintvoutservice
      class main
      user system
-     group graphics	
+     group graphics
