@@ -237,10 +237,6 @@ on emmc-fs
     mkdir /dev/bus/ 755 root root
     mkdir /dev/bus/usb 755 root root
 
-#Added for MTP permission
-    chmod 0660 /dev/usb_mtp_gadget
-    chown system system /dev/usb_mtp_gadget
-
     # create fota delta dir
     mkdir /data/fota_test 0775 system log
     chown system log /data/fota_test
