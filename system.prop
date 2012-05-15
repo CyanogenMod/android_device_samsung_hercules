@@ -99,6 +99,9 @@ persist.radio.adb_log_on=1
 # System proverty for sys info indication
 persist.radio.add_power_save=1
 
+# System proverty snapshot disable
+persist.radio.snapshot_disabled=1
+
 # notify vold we have internal and external sd
 ro.additionalmounts=/mnt/emmc
 ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
