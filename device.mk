@@ -19,10 +19,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US_SUPL:system/etc/gps.conf
 
-## ramdisk init
-PRODUCT_COPY_FILES += \
-    device/samsung/hercules/prebuilt/init:root/init
-
 ## (2) Also get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/hercules/hercules-vendor.mk)
 
