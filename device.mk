@@ -68,7 +68,7 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    device/samsung/hercules/ramdisk/init.rc:root/init.rc \
+    device/samsung/hercules/ramdisk/init.emmc.rc:root/init.emmc.rc \
     device/samsung/hercules/ramdisk/init.qcom.lpm_boot.sh:root/init.qcom.lpm_boot.sh \
     device/samsung/hercules/ramdisk/init.qcom.rc:root/init.qcom.rc \
     device/samsung/hercules/ramdisk/init.qcom.sh:root/init.qcom.sh \
@@ -77,7 +77,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/hercules/ramdisk/init.target.rc:root/init.target.rc \
     device/samsung/hercules/ramdisk/initlogo.rle:root/initlogo.rle \
     device/samsung/hercules/ramdisk/lpm.rc:root/lpm.rc \
-    device/samsung/hercules/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc
+    device/samsung/hercules/ramdisk/ueventd.rc:root/ueventd.rc
 
 # BT firmware
 PRODUCT_COPY_FILES += \
