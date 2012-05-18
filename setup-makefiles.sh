@@ -25,6 +25,8 @@ PRODUCT_COPY_FILES += \\
 	$OUTDIR/proprietary/lib/libacdbloader.so:obj/lib/libacdbloader.so \\
 	$OUTDIR/proprietary/lib/libacdbmapper.so:obj/lib/libacdbmapper.so \\
 	$OUTDIR/proprietary/lib/libaudioalsa.so:obj/lib/libaudioalsa.so \\
+        $OUTDIR/proprietary/lib/libsamsungSoundboosterLPA.so:obj/lib/libsamsungSoundboosterLPA.so \\
+        $OUTDIR/proprietary/lib/libmvsechocanceler.so:obj/lib/libmvsechocanceler.so \\
 	$OUTDIR/proprietary/lib/libv8.so:obj/lib/libv8.so
 
 PRODUCT_COPY_FILES += \\
@@ -35,10 +37,6 @@ COUNT=`wc -l device-proprietary-files.txt | awk {'print $1'}`
 DISM=`egrep -c '(^#|^$)' device-proprietary-files.txt`
 COUNT=`expr $COUNT - $DISM`
 for FILE in `egrep -v '(^#|^$)' device-proprietary-files.txt`; do
-  COUNT=`expr $COUNT - 1`
-  if [ $COUNT = "0" ]; then
-    LINEEND=""
-  fi
   echo "	$OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
 done
 
