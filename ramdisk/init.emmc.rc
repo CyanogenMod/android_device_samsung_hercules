@@ -93,6 +93,7 @@ on emmc-fs
     chown system media_rw /sys/class/mdnie/mdnie/scenario
     chown system media_rw /sys/class/mdnie/mdnie/mode
     chown system media_rw /sys/class/mdnie/mdnie/outdoor
+    chown media system /sys/devices/virtual/jack/jack_reselector/reselect_jack
 
     chown radio system /sys/devices/virtual/misc/melfas_touchkey/touch_sensitivity
     chown radio system /sys/devices/virtual/misc/melfas_touchkey/enable_disable
@@ -105,15 +106,50 @@ on emmc-fs
     chown radio system /sys/devices/virtual/sec/sec_touchkey/touchkey_firm_update
     chown radio system /sys/devices/virtual/sec/sec_touchkey/touchkey_brightness
 
-    chown radio system /sys/devices/platform/android_usb/UsbMenuSel
-    chown radio system /sys/devices/platform/android_usb/tethering
-    chown radio system /sys/devices/platform/android_usb/ums
-    chown radio system /sys/devices/virtual/sec/switch/uart_sel
-    chown radio system /sys/devices/virtual/sec/switch/usb_sel
-    chown radio system /sys/devices/virtual/sec/switch/.usb_lock/enable
-    chown radio system /sys/devices/virtual/sec/switch/device_type
-    chown radio system /sys/devices/virtual/sec/switch/disable_vbus
-    chown radio system /sys/devices/virtual/sec/switch/usb_state
+# Permissions for TSP
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_firm_version
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_threshold
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_all_refer
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/disp_all_refdata
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_all_delta
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/disp_all_deltadata
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_delta4
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_refer4
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_delta3
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_refer3
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_delta2
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_refer2
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_delta1
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_refer1
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_delta0
+   chown radio system /sys/devices/virtual/sec/tsp_noise_test/set_refer0
+   chown radio system /sys/devices/virtual/sec/sec_touchscreen/tsp_firm_version_panel
+   chown radio system /sys/devices/virtual/sec/sec_touchscreen/tsp_firm_version_phone
+   chown radio system /sys/devices/virtual/sec/sec_touchscreen/tsp_firm_update_status
+   chown radio system /sys/devices/virtual/sec/sec_touchscreen/tsp_firm_update
+   chown radio system /sys/devices/virtual/sec/sec_touchscreen/tsp_threshold
+   chown radio system /sys/devices/virtual/sec/sec_touchscreen/set_tsp_for_drawing
+
+# Permissions for Wacom
+   chown radio system /sys/class/sec/sec_epen/epen_firm_update
+   chown radio system /sys/class/sec/sec_epen/epen_rotation
+   chown radio system /sys/class/sec/sec_epen/epen_hand
+   chown radio system /sys/class/sec/sec_epen/epen_reset
+   chown radio system /sys/class/sec/sec_epen/epen_reset_result
+   chown radio system /sys/class/sec/sec_epen/epen_checksum
+   chown radio system /sys/class/sec/sec_epen/epen_checksum_result
+   chown radio system /sys/class/sec/sec_epen/epen_firm_version
+
+   chown radio system /sys/devices/platform/android_usb/UsbMenuSel
+   chown radio system /sys/devices/platform/android_usb/tethering
+   chown radio system /sys/devices/platform/android_usb/ums
+   chown radio system /sys/devices/virtual/sec/switch/uart_sel
+   chown radio system /sys/devices/virtual/sec/switch/usb_sel
+   chown radio system /sys/devices/virtual/sec/switch/.usb_lock/enable
+   chown radio system /sys/devices/virtual/sec/switch/device_type
+   chown radio system /sys/devices/virtual/sec/switch/disable_vbus
+   chown radio system /sys/devices/virtual/sec/switch/usb_state
+
 # Permissions for Battery driver
     chown radio system /sys/class/power_supply/battery/batt_esus_test
     chown radio system /sys/class/power_supply/battery/batt_test_value
