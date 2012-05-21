@@ -257,10 +257,10 @@ service secril-daemon /system/bin/sec-ril
     group radio cache inet misc audio sdcard_rw diag log
 
 # for datarouter
-service DR-daemon /system/bin/drexe
-    class main
-    user root
-    group system radio inet net_raw
+#service DR-daemon /system/bin/drexe
+#    class main
+#    user root
+#    group system radio inet net_raw
 
 # Vibetonz
 service immvibed /system/bin/immvibed
