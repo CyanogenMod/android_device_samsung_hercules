@@ -29,6 +29,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ## overlays
 DEVICE_PACKAGE_OVERLAYS += device/samsung/hercules/overlay
 
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
