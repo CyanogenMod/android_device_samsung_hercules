@@ -64,7 +64,8 @@ PRODUCT_COPY_FILES += \
     device/samsung/hercules/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
     device/samsung/hercules/modules/spidev.ko:system/lib/modules/spidev.ko \
     device/samsung/hercules/modules/tsif_chrdev.ko:system/lib/modules/tsif_chrdev.ko \
-    device/samsung/hercules/modules/vibrator.ko:system/lib/modules/vibrator.ko
+    device/samsung/hercules/modules/vibrator.ko:system/lib/modules/vibrator.ko \
+    device/samsung/hercules/modules/mmc_test.ko:system/lib/modules/mmc_test.ko
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
