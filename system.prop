@@ -21,6 +21,7 @@ dev.pm.dyn_samplingrate=1
 
 persist.sys.hdmi.on=0
 ro.hdmi.enable=true
+com.qc.hdmi_out=true
 
 # Audio
 #lpa.decode=true
