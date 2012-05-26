@@ -21,10 +21,6 @@
 # lines, full and maguro, hence its name.
 #
  
-# APN config
-PRODUCT_COPY_FILES += \
-    device/samsung/hercules/apns-conf.xml:system/etc/apns-conf.xml
-
 # Torch
 PRODUCT_PACKAGES := \
     Torch
