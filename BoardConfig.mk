@@ -78,3 +78,6 @@ COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
 
 # Disable MVS audio, it causes robot voice in GTalk
 COMMON_GLOBAL_CFLAGS += -DNO_QCOM_MVS
+
+# Disable initlogo, Samsungs framebuffer is weird
+TARGET_NO_INITLOGO := true
