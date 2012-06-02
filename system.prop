@@ -109,6 +109,9 @@ persist.radio.snapshot_disabled=1
 ro.additionalmounts=/mnt/emmc
 ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 
+# set mass storage to default
+persist.sys.usb.config=mass_storage
+
 # qcom display options
 debug.enabletr=true
 com.qc.hardware=true
