@@ -33,15 +33,7 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/hercules/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-# Kernel and modules
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := device/samsung/hercules/prebuilt/kernel
-else
-    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel \
     device/samsung/hercules/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
     device/samsung/hercules/modules/cls_flow.ko:system/lib/modules/cls_flow.ko \
     device/samsung/hercules/modules/dal_remotetest.ko:system/lib/modules/dal_remotetest.ko \
