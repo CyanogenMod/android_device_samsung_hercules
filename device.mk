@@ -51,8 +51,10 @@ PRODUCT_COPY_FILES += \
     device/samsung/hercules/modules/gspca_main.ko:system/lib/modules/gspca_main.ko \
     device/samsung/hercules/modules/ksapi.ko:system/lib/modules/ksapi.ko \
     device/samsung/hercules/modules/lcd.ko:system/lib/modules/lcd.ko \
+    device/samsung/hercules/modules/msm_bus_ioctl.ko:system/lib/modules/msm_bus_ioctl.ko \
     device/samsung/hercules/modules/msm-buspm-dev.ko:system/lib/modules/msm-buspm-dev.ko \
     device/samsung/hercules/modules/msm_tsif.ko:system/lib/modules/msm_tsif.ko \
+    device/samsung/hercules/modules/msm_watchdog_test_module.ko:system/lib/modules/msm_watchdog_test_module.ko \
     device/samsung/hercules/modules/qce.ko:system/lib/modules/qce.ko \
     device/samsung/hercules/modules/qcedev.ko:system/lib/modules/qcedev.ko \
     device/samsung/hercules/modules/qcrypto.ko:system/lib/modules/qcrypto.ko \
