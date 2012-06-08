@@ -81,6 +81,3 @@ COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
 
 # Disable initlogo, Samsungs framebuffer is weird
 TARGET_NO_INITLOGO := true
-
-# Option to work around the touchscreen lockup issue
-BOARD_USE_LEGACY_TOUCHSCREEN := true
