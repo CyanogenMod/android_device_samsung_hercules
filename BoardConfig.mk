@@ -35,8 +35,6 @@ TARGET_BOOTLOADER_BOARD_NAME := hercules
 
 TARGET_OTA_ASSERT_DEVICE := SGH-T989,hercules
 
-TARGET_USES_OVERLAY := false
-
 # Kernel
 TARGET_PREBUILT_KERNEL      := device/samsung/hercules/prebuilt/kernel
 BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true
@@ -86,4 +84,3 @@ TARGET_NO_INITLOGO := true
 
 # Option to work around the touchscreen lockup issue
 BOARD_USE_LEGACY_TOUCHSCREEN := true
-
