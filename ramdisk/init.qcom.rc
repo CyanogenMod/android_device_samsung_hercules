@@ -398,11 +398,11 @@ service wiperiface /system/bin/wiperiface
     group qcom_oncrpc
     oneshot
 
-service gpsone_daemon /system/bin/gpsone_daemon
-    class late_start
-    user system
-    group system qcom_oncrpc inet
-    disabled
+#service gpsone_daemon /system/bin/gpsone_daemon
+#    class late_start
+#    user system
+#    group system qcom_oncrpc inet
+#    disabled
 
 service quipc_igsn /system/bin/quipc_igsn
     class late_start
