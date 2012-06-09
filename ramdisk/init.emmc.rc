@@ -6,6 +6,8 @@ on early-init
     mkdir /mnt/emmc 0000 system system
     symlink /mnt/emmc /emmc
 
+    mkdir /mnt/usbdisk 0755 system system
+
     export EXTERNAL_STORAGE /mnt/emmc
 
 # Vibetonz
