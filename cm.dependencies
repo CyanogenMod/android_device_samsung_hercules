@@ -1,5 +1,10 @@
 [
   {
+    "repository": "android_kernel_samsung_msm8660-common",
+    "target_path": "kernel/samsung/msm8660-common",
+    "name": "TeamChopsticks/%s"
+  },
+  {
     "repository": "android_device_samsung_msm8660-common",
     "target_path": "device/samsung/msm8660-common"
   }
