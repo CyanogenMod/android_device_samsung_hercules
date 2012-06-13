@@ -81,6 +81,9 @@ TARGET_NO_BYPASS_CROPPING := true
 # FIXME: Overlay has an issue on Hercules when playing video in landscape mode
 COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
 
+# FIXME: needs to be disabled for camera preview to work correctly
+TARGET_QCOM_HDMI_OUT := false
+
 # Audio
 TARGET_USES_QCOM_LPA := true
 COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
