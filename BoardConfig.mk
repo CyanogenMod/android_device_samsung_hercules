@@ -36,8 +36,6 @@ TARGET_BOOTLOADER_BOARD_NAME := hercules
 TARGET_OTA_ASSERT_DEVICE := SGH-T989,hercules
 
 # Kernel
-#   - Needs GB kernel for recovery since ICS kernels cause eMMC corruption
-# Try to build the kernel
 TARGET_KERNEL_CONFIG        := cyanogenmod_hercules_defconfig
 TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
 BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true
@@ -72,8 +70,6 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 
 # MTP
 BOARD_MTP_DEVICE := "/dev/mtp_usb"
-
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 
 # Workaround for glitches while cropping bypass layers
 TARGET_NO_BYPASS_CROPPING := true
