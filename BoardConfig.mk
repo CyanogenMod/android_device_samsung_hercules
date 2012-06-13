@@ -84,3 +84,7 @@ COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
 
 # Disable initlogo, Samsungs framebuffer is weird
 TARGET_NO_INITLOGO := true
+
+# Preload the boot animation to avoid jerkiness
+TARGET_BOOTANIMATION_PRELOAD := true
+
