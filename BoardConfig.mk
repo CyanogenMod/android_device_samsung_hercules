@@ -78,6 +78,9 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 # Workaround for glitches while cropping bypass layers
 TARGET_NO_BYPASS_CROPPING := true
 
+# FIXME: Overlay has an issue on Hercules when playing video in landscape mode
+COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
+
 # Audio
 TARGET_USES_QCOM_LPA := true
 COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
