@@ -35,20 +35,19 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    device/samsung/hercules/ramdisk/init.emmc.rc:root/init.emmc.rc \
     device/samsung/hercules/ramdisk/init.qcom.rc:root/init.qcom.rc \
     device/samsung/hercules/ramdisk/init.qcom.sh:root/init.qcom.sh \
     device/samsung/hercules/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
     device/samsung/hercules/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
     device/samsung/hercules/ramdisk/init.target.rc:root/init.target.rc \
-    device/samsung/hercules/ramdisk/initlogo.rle:root/initlogo.rle \
-    device/samsung/hercules/ramdisk/ueventd.rc:root/ueventd.rc
+    device/samsung/hercules/ramdisk/ueventd.rc:root/ueventd.rc \
+    device/samsung/hercules/ramdisk/init.emmc.rc:root/init.emmc.rc
 
 # BT firmware
 PRODUCT_COPY_FILES += \
     device/samsung/hercules/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
 
-# Vold fstab
+# Vold
 PRODUCT_COPY_FILES += \
     device/samsung/hercules/vold.fstab:system/etc/vold.fstab
 
