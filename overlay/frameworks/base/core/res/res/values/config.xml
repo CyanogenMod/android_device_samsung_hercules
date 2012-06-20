@@ -192,4 +192,8 @@
     <!-- The restoring is handled by modem if it is true-->
     <bool name="skip_restoring_network_selection">true</bool>
 
+    <string-array translatable="false" name="config_telephony_set_audioparameters">
+        <item>dualmic_enabled</item>
+    </string-array>
+
 </resources>
