@@ -90,3 +90,7 @@ TARGET_NO_INITLOGO := true
 # Preload the boot animation to avoid jerkiness
 TARGET_BOOTANIMATION_PRELOAD := true
 
+# Recovery
+BOARD_CUSTOM_RECOVERY_GRAPHICS := device/samsung/hercules/recovery/minui/graphics.c
+TARGET_RECOVERY_INITRC := device/samsung/hercules/recovery/root/init.rc
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
