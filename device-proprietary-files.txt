@@ -1,1 +1,9 @@
 # Add device specific blobs here
+# NFC
+lib/hw/nfc.qcom.so
+lib/libpn544_fw.so
+
+# Wi-Fi
+etc/wifi/nvram_net.txt_murata
+etc/wifi/nvram_mfg.txt_murata
+
