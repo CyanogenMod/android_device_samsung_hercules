@@ -27,6 +27,7 @@ PRODUCT_COPY_FILES += \\
 	$OUTDIR/proprietary/lib/libaudioalsa.so:obj/lib/libaudioalsa.so \\
 	$OUTDIR/proprietary/lib/libv8.so:obj/lib/libv8.so
 
+# Device-specific proprietary files
 PRODUCT_COPY_FILES += \\
 EOF
 
@@ -35,8 +36,18 @@ COUNT=`wc -l device-proprietary-files.txt | awk {'print $1'}`
 DISM=`egrep -c '(^#|^$)' device-proprietary-files.txt`
 COUNT=`expr $COUNT - $DISM`
 for FILE in `egrep -v '(^#|^$)' device-proprietary-files.txt`; do
+  COUNT=`expr $COUNT - 1`
+  if [ $COUNT = "0" ]; then
+    LINEEND=""
+  fi
   echo "	$OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
 done
+
+(cat << EOF) >> $MAKEFILE
+
+# Device family proprietary files
+PRODUCT_COPY_FILES += \\
+EOF
 
 LINEEND=" \\"
 COUNT=`wc -l ../msm8660-common/common-proprietary-files.txt | awk {'print $1'}`
