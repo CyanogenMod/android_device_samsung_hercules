@@ -77,6 +77,9 @@ TARGET_QCOM_HDMI_OUT := false
 # Workaround for glitches while cropping bypass layers
 TARGET_NO_BYPASS_CROPPING := true
 
+# NFC
+BOARD_HAVE_NFC := true
+
 # MTP
 BOARD_MTP_DEVICE := "/dev/mtp_usb"
 
