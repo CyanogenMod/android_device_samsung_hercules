@@ -15,13 +15,8 @@ persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
-debug.sf.hw=1
-debug.composition.type=dyn
-dev.pm.dyn_samplingrate=1
 
-persist.sys.hdmi.on=0
-ro.hdmi.enable=true
-com.qc.hdmi_out=true
+dev.pm.dyn_samplingrate=1
 
 # Audio
 lpa.decode=true
@@ -113,8 +108,15 @@ ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 persist.sys.usb.config=mass_storage
 
 # qcom display options
+debug.sf.hw=1
+debug.composition.type=dyn
 debug.enabletr=true
 com.qc.hardware=true
+
+# HDMI
+com.qc.hdmi_out=true
+ro.hdmi.enable=true
+persist.sys.hdmi.on=0
 
 # tweaks
 persist.sys.ui.hw=1
