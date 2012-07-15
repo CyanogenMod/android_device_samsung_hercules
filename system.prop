@@ -115,6 +115,7 @@ persist.sys.usb.config=mass_storage
 # qcom display options
 debug.enabletr=true
 com.qc.hardware=true
+ro.sf.compbypass.enable=1
 
 # tweaks
 persist.sys.ui.hw=1
