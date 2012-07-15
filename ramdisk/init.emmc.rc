@@ -28,14 +28,7 @@ on early-fs
 
 on emmc-fs
 # mount mmc partitions
-    wait /dev/block/mmcblk0p24
-    mount ext4 /dev/block/mmcblk0p24 /system ro barrier=1
-    mount ext4 /dev/block/mmcblk0p26 /cache nosuid nodev barrier=1
-    exec /system/bin/e2fsck -p /dev/block/mmcblk0p21
-    mount ext4 /dev/block/mmcblk0p21 /efs nosuid nodev barrier=1
-    wait /dev/block/mmcblk0p25
-    exec /system/bin/e2fsck -p /dev/block/mmcblk0p25
-    mount ext4 /dev/block/mmcblk0p25 /data nosuid nodev barrier=1 noauto_da_alloc
+    mount_all /fstab.hercules
 
     chown radio system /efs
     chmod 0771 /efs
