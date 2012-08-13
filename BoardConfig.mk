@@ -43,6 +43,9 @@ BOARD_KERNEL_BASE           := 0x40400000
 BOARD_KERNEL_PAGESIZE       := 2048
 BOARD_FORCE_RAMDISK_ADDRESS := 0x41800000
 
+# use toolchain 4.4.3 for kernel compile
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
+
 # cat /proc/emmc
 #dev:        size     erasesize name
 #mmcblk0p22: 00fffc00 00000200 "recovery"
