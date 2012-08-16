@@ -42,7 +42,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/hercules/ramdisk/init.target.rc:root/init.target.rc \
     device/samsung/hercules/ramdisk/ueventd.rc:root/ueventd.rc \
     device/samsung/hercules/ramdisk/init.emmc.rc:root/init.emmc.rc \
-    device/samsung/hercules/fstab.hercules:root/fstab.hercules
+    device/samsung/hercules/fstab.qcom:root/fstab.qcom
 
 # BT firmware
 PRODUCT_COPY_FILES += \

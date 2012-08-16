@@ -32,7 +32,7 @@ on early-fs
 
 on emmc-fs
 # mount mmc partitions
-    mount_all /fstab.hercules
+    mount_all /fstab.qcom
 
     chown radio system /efs
     chmod 0771 /efs
