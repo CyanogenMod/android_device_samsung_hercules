@@ -68,9 +68,6 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 # Suppress the WIPE command since it can brick our EMMC
 BOARD_SUPPRESS_EMMC_WIPE := true
 
-# FIXME: Overlay has an issue when playing video in landscape mode
-COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
-
 # Workaround for glitches while cropping bypass layers
 TARGET_NO_BYPASS_CROPPING := true
 
