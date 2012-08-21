@@ -284,12 +284,12 @@ service ril-daemon /system/bin/rild
     socket rild stream 660 root radio
     socket rild-debug stream 660 radio system
     user root
-    group radio cache inet misc audio sdcard_rw qcom_oncrpc diag log
+    group radio cache inet misc audio sdcard_rw qcom_oncrpc qcom_diag log
 
 service secril-daemon /system/bin/sec-ril
     class main
     user root
-    group radio cache inet misc audio sdcard_rw diag log
+    group radio cache inet misc audio sdcard_rw qcom_diag log
 
 # for datarouter
 #service DR-daemon /system/bin/drexe
