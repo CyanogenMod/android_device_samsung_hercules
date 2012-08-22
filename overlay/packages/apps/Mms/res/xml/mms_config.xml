@@ -41,7 +41,7 @@
 
     <!-- If true, the text message will be split every 160 characters.
          If false, the text will never be split before being sent. -->
-    <bool name="enableSplitSMS">true</bool>
+    <bool name="enableSplitSMS">false</bool>
 
     <!-- UAProf URL -->
     <string name="uaProfUrl">http://wap.samsungmobile.com/uaprof/GT-I9100.xml</string>
