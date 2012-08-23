@@ -15,14 +15,8 @@ persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
-debug.sf.hw=1
-debug.composition.type=dyn
-debug.mdpcomp.maxlayer=2
-dev.pm.dyn_samplingrate=1
 
-persist.sys.hdmi.on=0
-ro.hdmi.enable=true
-com.qc.hdmi_out=true
+dev.pm.dyn_samplingrate=1
 
 # Audio
 lpa.decode=false
@@ -103,17 +97,18 @@ persist.radio.add_power_save=1
 # System proverty snapshot disable
 persist.radio.snapshot_disabled=1
 
-# notify vold we have internal and external sd
-ro.additionalmounts=/mnt/emmc
-ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
-
 # set mass storage to default
 persist.sys.usb.config=mass_storage
 
 # qcom display options
-debug.enabletr=true
 com.qc.hardware=true
-ro.sf.compbypass.enable=1
+ro.hdmi.enable=true
+debug.sf.hw=1
+debug.egl.hw=1
+debug.composition.type=dyn
+debug.mdpcomp.maxlayer=2
+debug.mdpcomp.logs=0
+ro.hwui.text_cache_width=2048
 
 # tweaks
 persist.sys.ui.hw=1
