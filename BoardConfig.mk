@@ -75,8 +75,6 @@ TARGET_NO_BYPASS_CROPPING := true
 BOARD_MTP_DEVICE := "/dev/mtp_usb"
 
 # Audio
-TARGET_USES_QCOM_LPA := true
-COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
 BOARD_HAS_SAMSUNG_VOLUME_BUG := true
 
 # Disable initlogo, Samsungs framebuffer is weird

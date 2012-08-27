@@ -25,8 +25,8 @@ ro.hdmi.enable=true
 com.qc.hdmi_out=true
 
 # Audio
-lpa.decode=true
-lpa.use-stagefright=true
+lpa.decode=false
+lpa.use-stagefright=false
 
 #system props for the MM modules
 
