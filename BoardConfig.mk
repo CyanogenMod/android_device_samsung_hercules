@@ -74,9 +74,6 @@ TARGET_NO_BYPASS_CROPPING := true
 # MTP
 BOARD_MTP_DEVICE := "/dev/mtp_usb"
 
-# Audio
-BOARD_HAS_SAMSUNG_VOLUME_BUG := true
-
 # Disable initlogo, Samsungs framebuffer is weird
 TARGET_NO_INITLOGO := true
 
