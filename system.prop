@@ -83,16 +83,6 @@ persist.radio.add_power_save=1
 # System proverty snapshot disable
 persist.radio.snapshot_disabled=1
 
-# qcom display options
-com.qc.hardware=true
-ro.hdmi.enable=true
-debug.sf.hw=1
-debug.egl.hw=1
-debug.composition.type=dyn
-debug.mdpcomp.maxlayer=2
-debug.mdpcomp.logs=0
-ro.hwui.text_cache_width=2048
-
 # tweaks
 persist.sys.ui.hw=1
 dalvik.vm.verify_bytecode=false
