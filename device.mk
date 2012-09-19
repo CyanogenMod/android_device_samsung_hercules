@@ -33,6 +33,10 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/hercules/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
+# Hardware
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml 
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     device/samsung/hercules/ramdisk/init.qcom.rc:root/init.qcom.rc \
