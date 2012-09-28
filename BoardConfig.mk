@@ -38,7 +38,7 @@ TARGET_OTA_ASSERT_DEVICE := SGH-T989,hercules
 # Kernel
 TARGET_KERNEL_CONFIG        := cyanogenmod_hercules_defconfig
 TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
-BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true no_console_suspend=true
+BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true no_console_suspend=true zcache
 BOARD_KERNEL_BASE           := 0x40400000
 BOARD_KERNEL_PAGESIZE       := 2048
 BOARD_FORCE_RAMDISK_ADDRESS := 0x41800000
