@@ -14,60 +14,21 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-## The gps config appropriate for this device
-PRODUCT_COPY_FILES += device/common/gps/gps.conf_US_SUPL:system/etc/gps.conf
-
 ## (2) Also get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/hercules/hercules-vendor.mk)
-
-## misc
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dexopt-flags=m=v,o=y
 
 ## overlays
 DEVICE_PACKAGE_OVERLAYS += device/samsung/hercules/overlay
 
-# Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
-
-# Hardware
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml 
-
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    device/samsung/hercules/ramdisk/init.qcom.rc:root/init.qcom.rc \
-    device/samsung/hercules/ramdisk/init.qcom.sh:root/init.qcom.sh \
     device/samsung/hercules/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    device/samsung/hercules/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
-    device/samsung/hercules/ramdisk/init.target.rc:root/init.target.rc \
-    device/samsung/hercules/ramdisk/ueventd.rc:root/ueventd.rc \
-    device/samsung/hercules/ramdisk/init.emmc.rc:root/init.emmc.rc \
-    device/samsung/hercules/fstab.qcom:root/fstab.qcom
 
 # BT firmware
 PRODUCT_COPY_FILES += \
-    device/samsung/hercules/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
+    device/samsung/skyrocket/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
 
-# Vold
-PRODUCT_COPY_FILES += \
-    device/samsung/hercules/vold.fstab:system/etc/vold.fstab
-
-# QRNGD
-PRODUCT_PACKAGES += qrngd
-
-# common msm8660
-$(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
-
-$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+# Inherit from celox-common
+$(call inherit-product, device/samsung/celox-common/celox-common.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/hercules/hercules-vendor.mk)
-
-#WIFI_BAND := 802_11_ABG
-#$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
-
-# NFC
-BOARD_HAVE_NFC := true
