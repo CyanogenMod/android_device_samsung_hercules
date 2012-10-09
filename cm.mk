@@ -15,3 +15,4 @@ TARGET_BOOTANIMATION_NAME := 480
 
 PRODUCT_NAME := cm_hercules
 PRODUCT_DEVICE := hercules
+
