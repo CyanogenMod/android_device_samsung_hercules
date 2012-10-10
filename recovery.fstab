@@ -1,7 +1,7 @@
 /boot       emmc        /dev/block/mmcblk0p8
 /efs        ext4        /dev/block/mmcblk0p21
 /recovery   emmc        /dev/block/mmcblk0p22
-/data       ext4        /dev/block/mmcblk0p25
+/data       ext4        /dev/block/mmcblk0p25 length=-16384
 /system     ext4        /dev/block/mmcblk0p24
 /cache      ext4        /dev/block/mmcblk0p26
 /emmc       vfat        /dev/block/mmcblk0p28
