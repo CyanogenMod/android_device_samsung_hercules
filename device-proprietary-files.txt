@@ -9,6 +9,9 @@
 #     ignore.
 #   - Blobs should be listed with their path relative to /system
 #     on the device.
+#   - A different destination path may be specified after a colon on
+#     the same line as the blob source path. Otherwise, the
+#     destination path with be the same as it was on the device.
 #   - Options for a particular blob are specified in a comment
 #     after the blob path.
 #
@@ -22,7 +25,7 @@
 # Add device specific blobs here
 # NFC
 lib/hw/nfc.qcom.so
-lib/libpn544_fw.so
+lib/libpn544_fw.so:vendor/firmware/libpn544_fw.so
 
 # Wi-Fi
 etc/wifi/nvram_net.txt_murata
