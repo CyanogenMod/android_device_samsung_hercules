@@ -4,5 +4,5 @@
 /data       ext4        /dev/block/mmcblk0p25 length=-16384
 /system     ext4        /dev/block/mmcblk0p24
 /cache      ext4        /dev/block/mmcblk0p26
-/emmc       vfat        /dev/block/mmcblk0p28
-/sdcard     vfat        /dev/block/mmcblk1p1    /dev/block/mmcblk1
+/sdcard     vfat        /dev/block/mmcblk0p28
+/external_sd     vfat        /dev/block/mmcblk1p1    /dev/block/mmcblk1
