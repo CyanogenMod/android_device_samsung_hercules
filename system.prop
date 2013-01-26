@@ -14,7 +14,6 @@ persist.rild.nitz_short_ons_1=
 persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
-DEVICE_PROVISIONED=1
 
 dev.pm.dyn_samplingrate=1
 
@@ -25,8 +24,6 @@ media.stagefright.enable-http=true
 media.stagefright.enable-fma2dp=false
 media.stagefright.enable-aac=true
 media.stagefright.enable-qcp=true
-
-ro.vendor.extension_library=/system/lib/libqc-opt.so
 
 #
 # system props for the data modules
@@ -83,6 +80,3 @@ persist.radio.add_power_save=1
 # System proverty snapshot disable
 persist.radio.snapshot_disabled=1
 
-# tweaks
-persist.sys.ui.hw=1
-dalvik.vm.verify_bytecode=false
