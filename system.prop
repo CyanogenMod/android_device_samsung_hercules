@@ -64,8 +64,6 @@ ro.telephony.call_ring.multiple=0
 ro.sf.lcd_density=240
 
 # Fields for custom RIL
-# MAX PROP NAME is 31 chars --|
-ro.telephony.ril_class=SamsungQualcommUiccRIL
 telephony.lteOnGsmDevice=1
 
 # System property for SIM
