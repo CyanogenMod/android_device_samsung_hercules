@@ -17,6 +17,9 @@ ril.subscription.types=NV,RUIM
 
 dev.pm.dyn_samplingrate=1
 
+# Disable GC freed lines
+dalvik.vm.debug.alloc=0
+
 #system props for the MM modules
 
 media.stagefright.enable-player=true
