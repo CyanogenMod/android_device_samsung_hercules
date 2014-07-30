@@ -28,11 +28,6 @@
 on init
     write /sys/class/android_usb/android0/f_rndis/wceis 1
 
-service qcom-usb-sh /system/bin/sh /init.qcom.usb.sh
-    class core
-    user root
-    oneshot
-
 on boot
     write /sys/class/android_usb/android0/iManufacturer $ro.manufacturer
     write /sys/class/android_usb/android0/iProduct $ro.model
@@ -51,7 +46,7 @@ on property:sys.usb.config=rndis,acm,diag
     write /sys/class/android_usb/android0/functions rndis,acm,diag
     write /sys/class/android_usb/android0/enable 1
     setprop sys.usb.state $sys.usb.config
-    
+
 on property:sys.usb.config=rmnet,acm,diag
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 04E8
@@ -78,7 +73,7 @@ on property:sys.usb.config=diag,serial_smd,serial_tty,rmnet_bam,mass_storage,adb
     write /sys/class/android_usb/android0/idVendor 04E8
     write /sys/class/android_usb/android0/idProduct 685E
     write /sys/class/android_usb/android0/f_diag/clients diag
-    write /sys/class/android_usb/android0/f_rmnet/transports smd,bam    
+    write /sys/class/android_usb/android0/f_rmnet/transports smd,bam
     write /sys/class/android_usb/android0/functions diag,adb,rmnet,mass_storage
     write /sys/class/android_usb/android0/enable 1
     start adbd
@@ -129,7 +124,7 @@ on property:sys.usb.config=diag,serial_smd,serial_tty,rmnet_bam,mass_storage
     write /sys/class/android_usb/android0/idVendor 04E8
     write /sys/class/android_usb/android0/idProduct 685E
     write /sys/class/android_usb/android0/f_diag/clients diag
-    write /sys/class/android_usb/android0/f_rmnet/transports smd,bam	
+    write /sys/class/android_usb/android0/f_rmnet/transports smd,bam
     write /sys/class/android_usb/android0/functions diag,rmnet,mass_storage
     write /sys/class/android_usb/android0/enable 1
     setprop sys.usb.state $sys.usb.config
@@ -330,7 +325,7 @@ on property:sys.usb.config=mass_storage,adb
 #    write /sys/class/android_usb/android0/enable 0
 #    write /sys/class/android_usb/android0/idVendor 04E8
 #    write /sys/class/android_usb/android0/idProduct 6860
-#	write /sys/class/android_usb/android0/f_diag/clients diag
+#    write /sys/class/android_usb/android0/f_diag/clients diag
 #    write /sys/class/android_usb/android0/f_rmnet/instances 1
 #    write /sys/class/android_usb/android0/functions mtp,adb
 #    write /sys/class/android_usb/android0/enable 1
@@ -389,7 +384,7 @@ on property:sys.usb.config=ptp,adb
     write /sys/class/android_usb/android0/idProduct 6866
     write /sys/class/android_usb/android0/functions ptp,adb
     write /sys/class/android_usb/android0/enable 1
-	start adbd
+    start adbd
     setprop sys.usb.state $sys.usb.config
 
 on property:sys.usb.config=mtp,diag
